@@ -1,41 +1,110 @@
 
-<h3>Esempio Autocomplete</h3>
-
-<div class="bd-example">
-  <div class="example-section">
-    <it-autocomplete id="regions" label="Regione" [source]="source()"></it-autocomplete>
-  </div>
-</div>
-
-
-<h3>Configurazione checkbox</h3>
-
-<div class="bd-example">
-  <div class="example-section">
-    <fieldset>
-      <legend>Gruppo di checkbox</legend>
-      <it-checkbox [(ngModel)]="checked" label="Spuntato"></it-checkbox>
-      <it-checkbox [(ngModel)]="disabled" label="Disabilitato"></it-checkbox>
-      <it-checkbox [(ngModel)]="indeterminate" label="Indeterminato"></it-checkbox>
-      <it-checkbox [(ngModel)]="link" label="Testo con link"></it-checkbox>
-    </fieldset>
-  </div>
-  <hr />
-  <h4>Risultato</h4>
-
-  <div class="example-section">
-    <it-checkbox [(ngModel)]="checked" [indeterminate]="indeterminate" [disabled]="disabled">
-      <ng-container label>
-        @if(link) {
-          <ng-container>
-          Accetto i <a href="https://italia.github.io/bootstrap-italia/">termini di servizio</a>
-        </ng-container>
-        } @else {
-          <ng-container>
-            Sono una checkbox
+<div class="general-container px-4">
+    <h3>Esempio Autocomplete</h3>
+    
+    <div class="bd-example">
+      <div class="example-section">
+        <it-autocomplete id="regions" label="Regione" [source]="source()"></it-autocomplete>
+      </div>
+    </div>
+    
+    
+    <h3>Configurazione checkbox</h3>
+    
+    <div class="bd-example">
+      <div class="example-section">
+        <fieldset>
+          <legend>Gruppo di checkbox</legend>
+          <it-checkbox [(ngModel)]="checked" label="Spuntato"></it-checkbox>
+          <it-checkbox [(ngModel)]="disabled" label="Disabilitato"></it-checkbox>
+          <it-checkbox [(ngModel)]="indeterminate" label="Indeterminato"></it-checkbox>
+          <it-checkbox [(ngModel)]="link" label="Testo con link"></it-checkbox>
+        </fieldset>
+      </div>
+      <hr />
+      <h4>Risultato</h4>
+    
+      <div class="example-section">
+        <it-checkbox [(ngModel)]="checked" [indeterminate]="indeterminate" [disabled]="disabled">
+          <ng-container label>
+            @if(link) {
+              <ng-container>
+              Accetto i <a href="https://italia.github.io/bootstrap-italia/">termini di servizio</a>
+            </ng-container>
+            } @else {
+              <ng-container>
+                Sono una checkbox
+              </ng-container>
+            }
           </ng-container>
-        }
-      </ng-container>
-    </it-checkbox>
-  </div>
+        </it-checkbox>
+      </div>
+    </div>
+    
+    
+    <h3>Interazione con Form Input</h3>
+    <p>Elementi e stili per la creazione di input accessibili e responsivi.</p>
+    
+    <div class="bd-example">
+      <div class="row">
+        <div class="col-8">
+            @if(type === 'password')  { 
+                <it-password-input
+                  [label]="label"
+                  [placeholder]="placeholder"
+                  [disabled]="disabled"
+                  [(ngModel)]="value"
+                  showStrengthMeter="true"
+                  [validationMode]="false">
+              </it-password-input>
+            } @else {
+                <it-input
+                [label]="label"
+                [placeholder]="placeholder"
+                [disabled]="disabled"
+                [readonly]="readOnly"
+                [type]="type"
+                [(ngModel)]="value"
+                [description]="note">
+            </it-input>
+            }
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="form-check col-6">
+          <h5>Opzioni</h5>
+          <div class="row">
+            <div class="col-4">
+              <it-checkbox [(ngModel)]="disabled" label="Disabled"></it-checkbox>
+              <it-checkbox [(ngModel)]="readOnly" label="Readonly"></it-checkbox>
+              <it-checkbox [(ngModel)]="hasLabel" label="Label"></it-checkbox>
+            </div>
+            <div class="col-auto">
+              <it-checkbox [(ngModel)]="hasPlaceholder" label="Placeholder"></it-checkbox>
+              <it-checkbox [(ngModel)]="hasNote" label="Note"></it-checkbox>
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-check col-6">
+          <h5>Tipo Input</h5>
+          <div class="row">
+            <div class="col-4">
+              <it-radio-button name="text" [(ngModel)]="type" value="text" label="text"></it-radio-button>
+              <it-radio-button name="number" [(ngModel)]="type" value="number" label="number"></it-radio-button>
+              <it-radio-button name="email" [(ngModel)]="type" value="email" label="email"></it-radio-button>
+              <it-radio-button name="password" [(ngModel)]="type" value="password" label="password"></it-radio-button>
+            </div>
+            <div class="col-auto ml-2r">
+              <it-radio-button name="time" [(ngModel)]="type" value="time" label="time"></it-radio-button>
+              <it-radio-button name="date" [(ngModel)]="type" value="date" label="date"></it-radio-button>
+              <it-radio-button name="tel" [(ngModel)]="type" value="tel" label="tel"></it-radio-button>
+              <it-radio-button name="color" [(ngModel)]="type" value="color" label="color"></it-radio-button>
+              <it-radio-button name="url" [(ngModel)]="type" value="url" label="url"></it-radio-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
