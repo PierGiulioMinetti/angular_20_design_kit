@@ -1,0 +1,41 @@
+
+<h3>Esempio Autocomplete</h3>
+
+<div class="bd-example">
+  <div class="example-section">
+    <it-autocomplete id="regions" label="Regione" [source]="source()"></it-autocomplete>
+  </div>
+</div>
+
+
+<h3>Configurazione checkbox</h3>
+
+<div class="bd-example">
+  <div class="example-section">
+    <fieldset>
+      <legend>Gruppo di checkbox</legend>
+      <it-checkbox [(ngModel)]="checked" label="Spuntato"></it-checkbox>
+      <it-checkbox [(ngModel)]="disabled" label="Disabilitato"></it-checkbox>
+      <it-checkbox [(ngModel)]="indeterminate" label="Indeterminato"></it-checkbox>
+      <it-checkbox [(ngModel)]="link" label="Testo con link"></it-checkbox>
+    </fieldset>
+  </div>
+  <hr />
+  <h4>Risultato</h4>
+
+  <div class="example-section">
+    <it-checkbox [(ngModel)]="checked" [indeterminate]="indeterminate" [disabled]="disabled">
+      <ng-container label>
+        @if(link) {
+          <ng-container>
+          Accetto i <a href="https://italia.github.io/bootstrap-italia/">termini di servizio</a>
+        </ng-container>
+        } @else {
+          <ng-container>
+            Sono una checkbox
+          </ng-container>
+        }
+      </ng-container>
+    </it-checkbox>
+  </div>
+</div>

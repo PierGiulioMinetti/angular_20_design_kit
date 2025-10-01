@@ -1,6 +1,11 @@
 TO INSTALL THE LIBRARY 
 (https://italia.github.io/design-angular-kit/design-angular-kit#/info/welcome)
 
+-generate zoneless app
+-generate strategy.OnPush components
+-install library with command: ng add design-angular-kit --project projectName
+-make sure Angular CDK version exist and is compatible with Angular installed version 
+-added the sass.config.js file to silence all the deprecated warnings from Bootstrap Angular Italia's code
 ----------------------------------------------------------------------
 
 # MyApp
